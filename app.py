@@ -33,5 +33,8 @@ def generate_plan():
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
 
+# This is the main entrypoint that Vercel uses
+app = app
+
 if __name__ == '__main__':
     app.run(debug=True)
