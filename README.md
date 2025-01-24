@@ -1,68 +1,94 @@
-# Simple Mira Flow
+# Mira Travel Planner
 
-This is a template project for creating Mira flows. The `flows` directory contains some sample flows.
+An AI-powered travel planning application that generates personalized travel itineraries based on your preferences, budget, and interests. Built with Flask and the Mira AI platform, this application helps travelers create detailed, customized travel plans that match their unique travel style.
 
-## Quick Start
+![Mira Travel Planner](https://your-screenshot-url-here.png)
 
-**Before you start, please [sign up](https://flows.mira.network/) using invitation code `SRICITY` and get your Mira API key.**
+## 🌟 Features
 
-> [!NOTE]
-> Use [uv](https://astral.sh/blog/uv) for package management for a better and faster experience (optional)
+- **Personalized Itinerary Generation**
+  - Custom destination recommendations
+  - Duration and date-based planning
+  - Budget-conscious suggestions
+  - Interest-based activities
+  - Flexible travel styles
+  - Accommodation preferences
 
-1. **Set up environment**
+- **Smart AI Integration**
+  - Powered by Claude 3.5 Sonnet
+  - Natural language processing
+  - Context-aware recommendations
+
+## 🚀 Quick Start
+
+1. **Prerequisites**
+   - Python 3.8 or higher
+   - [Mira API key](https://flows.mira.network/) (Sign up with invitation code `SRICITY`)
+
+2. **Installation**
    ```bash
-   # Create and activate a Python virtual environment (optional but recommended)
-   python -m venv .venv # on linux
-   source .venv/bin/activate # on linux
-
+   # Create and activate virtual environment
+   python -m venv .venv
+   source .venv/bin/activate  # On Linux/macOS
+   
    # Install dependencies
-   pip install -e .
+   pip install -r requirements.txt
    ```
 
-> [!WARNING]
-> If you use Windows, then make sure to refer python docs for virtual environment setup.
-
-
-2. **Add your API key**
+3. **Configuration**
    ```bash
-   # Create .env file and add your Mira API key
+   # Create .env file with your Mira API key
    echo "MIRA_API_KEY=your_api_key_here" > .env
    ```
 
-3. **Modify the flow**
-   - Edit `flow.yaml`:
-     - Change `metadata.name` to your flow name
-     - Change `metadata.author` to your Mira username
-     - Modify `inputs`, `model`, and `prompt` for your use case
-
-4. **Update the code**
-   - Edit `hello.py`:
-     - Change `flow_id` in `deploy_flow()` to match your "author/flow-name"
-     - Modify the sample input in `main()` to match your flow's requirements
-
-5. **Run the flow**
+4. **Run the Application**
    ```bash
-   python hello.py
+   python app.py
    ```
-   - Check your deployed flow at https://flows.mira.network/factory
 
-## Project Structure
+5. **Access the Application**
+   - Open your browser and navigate to `http://localhost:5000`
+   - Start planning your dream trip!
 
-- `flow.yaml`: Flow configuration (prompt, model, inputs)
-- `hello.py`: Python code to deploy and run the flow
-- `.env`: Environment variables (API key)
-- `pyproject.toml`: Project dependencies
+## 🛠️ Tech Stack
 
+- **Backend**: Python/Flask
+- **Frontend**: JavaScript, HTML, CSS
+- **AI Integration**: Mira SDK, Anthropic's Claude
+- **Configuration**: YAML-based flow definitions
 
-## Ideas
+## 📁 Project Structure
 
-- AI DJ that generates music based on your dance moves
-- AI that generates recipe based on the ingredients you have at home
-- AI that generates a song based on your favorite lyrics
-- AI that predicts your mood based on your tone of voice
-- AI that generates a workout routine based on your fitness goals
-- AI that generates a poem based on your emotions
-- AI that generates a video game based on your favorite games
-- AI that generates a personalized meditation based on your brain waves
-- AI that generates a fashion outfit based on your style
-- AI that generates a personalized book based on your reading habits
+```
+mira-flows/
+├── app.py              # Flask application
+├── flows/
+│   └── travel-planner.yaml  # Mira flow definition
+├── static/            
+│   ├── css/           # Stylesheets
+│   └── js/            # JavaScript files
+├── templates/         # HTML templates
+└── requirements.txt   # Python dependencies
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Mira](https://mira.com) for providing the AI platform
+- [Anthropic](https://anthropic.com) for Claude AI model
+- All contributors and users of this project
+
+---
+
+Made with ❤️ using [Mira](https://mira.com) - Making AI workflows accessible and powerful.
