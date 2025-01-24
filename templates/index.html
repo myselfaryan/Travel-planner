@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-indigo-600 mb-2">AI Travel Planner</h1>
+            <p class="text-gray-600">Create your personalized travel itinerary with AI</p>
+        </header>
+
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <form id="travelForm" class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2" for="destination">
+                        Destination Preferences
+                    </label>
+                    <input type="text" id="destination" name="destination_preferences" 
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"
+                           placeholder="e.g., Historical European cities with rich culture">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2" for="dates">
+                        Travel Dates
+                    </label>
+                    <input type="text" id="dates" name="travel_dates"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"
+                           placeholder="e.g., 2 weeks in July 2025">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2" for="budget">
+                        Budget
+                    </label>
+                    <input type="text" id="budget" name="budget"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"
+                           placeholder="e.g., $4000 excluding flights">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2" for="interests">
+                        Interests
+                    </label>
+                    <input type="text" id="interests" name="interests"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"
+                           placeholder="e.g., Art museums, local cuisine, architecture">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2" for="style">
+                        Travel Style
+                    </label>
+                    <input type="text" id="style" name="travel_style"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"
+                           placeholder="e.g., Moderate pace, mix of popular sites and local experiences">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2" for="accommodation">
+                        Accommodation Preferences
+                    </label>
+                    <input type="text" id="accommodation" name="accommodation_preferences"
+                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-indigo-500"
+                           placeholder="e.g., Boutique hotels in city centers">
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-200">
+                    Generate Travel Plan
+                </button>
+            </form>
+
+            <div id="loadingIndicator" class="hidden mt-6 text-center">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+                <p class="mt-4 text-gray-600">Generating your personalized travel plan...</p>
+            </div>
+
+            <div id="result" class="hidden mt-6 p-6 bg-gray-50 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Your Travel Itinerary</h2>
+                <div id="resultContent" class="prose max-w-none"></div>
+            </div>
+
+            <div id="error" class="hidden mt-6 p-4 bg-red-100 text-red-700 rounded-lg">
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* Additional custom styles can be added here */
+.prose {
+    line-height: 1.6;
+    color: #374151;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+}
+
+.prose ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.prose h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1F2937;
+}
